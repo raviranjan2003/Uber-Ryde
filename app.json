@@ -25,7 +25,7 @@
     },
     "web": {
       "bundler": "metro",
-      "output": "static",
+      "output": "server",
       "favicon": "./assets/images/favicon.png"
     },
     "plugins": [
@@ -40,6 +40,9 @@
         }
       ]
     ],
+    "extra" : {
+      "origin": "https://uber.com/"
+    },
     "experiments": {
       "typedRoutes": true
     }
