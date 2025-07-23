@@ -7,7 +7,6 @@ import 'react-native-reanimated';
 
 
 export default function RootLayout() {
-
   const [loaded] = useFonts({
     "Jakarta-Bold": require("../assets/fonts/PlusJakartaSans-Bold.ttf"),
     "Jakarta-ExtraBold": require("../assets/fonts/PlusJakartaSans-ExtraBold.ttf"),
@@ -18,8 +17,12 @@ export default function RootLayout() {
     "Jakarta-SemiBold": require("../assets/fonts/PlusJakartaSans-SemiBold.ttf"),
 });
 
+  if (!loaded) {
+    // Async font loading only occurs in development.
+    return null;
+  }
+
   return (
-    // <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
     <ClerkProvider tokenCache={tokenCache}>
       <Stack>
         <Stack.Screen name="index" options={{ headerShown: false }} />
@@ -29,7 +32,5 @@ export default function RootLayout() {
       </Stack>
       <StatusBar style="auto" />
     </ClerkProvider>
-
-    // </ThemeProvider>
   );
 }
