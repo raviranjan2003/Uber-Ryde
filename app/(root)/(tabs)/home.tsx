@@ -101,7 +101,7 @@ export default function Page() {
         ListHeaderComponent={() => (
           <>
             <View className='flex flex-row items-center justify-between my-5'>
-              <Text className='text-2xl font-JakartaExtraBold'>Welcome {} 👋</Text>
+              <Text className='text-2xl font-JakartaExtraBold'>Welcome {user?.firstName} 👋</Text>
               <TouchableOpacity
                 onPress={onSignOutPress}
                 className='items-center justify-center w-10 h-10 rounded-full bg-white'
